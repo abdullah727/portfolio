@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { ExternalLink, ChevronLeft, ChevronRight, Lock } from "lucide-react";
 import { GitHubIcon } from "@/components/ui/Icons";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { TechBadge } from "./TechBadge";
 import { cn } from "@/lib/utils";
 import type { Project } from "@/types";
@@ -16,9 +16,26 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project, index }: ProjectCardProps) {
   const [imageIndex, setImageIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
 
-  const prev = () => setImageIndex((i) => (i - 1 + project.images.length) % project.images.length);
-  const next = () => setImageIndex((i) => (i + 1) % project.images.length);
+  const prev = () => {
+    setDirection(-1);
+    setImageIndex((i) => (i - 1 + project.images.length) % project.images.length);
+  };
+  const next = () => {
+    setDirection(1);
+    setImageIndex((i) => (i + 1) % project.images.length);
+  };
+  const goTo = (i: number) => {
+    setDirection(i > imageIndex ? 1 : -1);
+    setImageIndex(i);
+  };
+
+  const variants = {
+    enter: (dir: number) => ({ x: dir * 40, opacity: 0 }),
+    center: { x: 0, opacity: 1 },
+    exit: (dir: number) => ({ x: dir * -40, opacity: 0 }),
+  };
 
   return (
     <motion.div
@@ -27,21 +44,34 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.45, delay: index * 0.08, ease: "easeOut" }}
       className={cn(
-        "gradient-border group flex flex-col rounded-xl overflow-hidden",
+        "group flex flex-col rounded-xl overflow-hidden",
         "bg-[var(--surface)] border border-[var(--border)]",
         "transition-all duration-300",
-        "hover:shadow-[0_0_32px_rgba(168,85,247,0.15)]"
+        "hover:border-[var(--border-hover)] hover:shadow-[0_4px_24px_rgba(0,0,0,0.08)]"
       )}
     >
       {/* Image carousel */}
       <div className="relative w-full aspect-[16/9] bg-[var(--surface-2)] overflow-hidden">
-        <Image
-          src={project.images[imageIndex]}
-          alt={`${project.name} screenshot ${imageIndex + 1}`}
-          fill
-          className="object-cover object-top transition-opacity duration-300"
-          sizes="(max-width: 768px) 100vw, 50vw"
-        />
+        <AnimatePresence initial={false} custom={direction} mode="popLayout">
+          <motion.div
+            key={imageIndex}
+            custom={direction}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ duration: 0.35, ease: "easeInOut" }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={project.images[imageIndex]}
+              alt={`${project.name} screenshot ${imageIndex + 1}`}
+              fill
+              className="object-cover object-top"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </motion.div>
+        </AnimatePresence>
 
         {/* Carousel controls */}
         {project.images.length > 1 && (
@@ -66,11 +96,11 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
               {project.images.map((_, i) => (
                 <button
                   key={i}
-                  onClick={() => setImageIndex(i)}
+                  onClick={() => goTo(i)}
                   aria-label={`Screenshot ${i + 1}`}
                   className={cn(
-                    "w-1.5 h-1.5 rounded-full transition-all duration-200",
-                    i === imageIndex ? "bg-white w-3" : "bg-white/40"
+                    "h-1.5 rounded-full transition-all duration-200",
+                    i === imageIndex ? "bg-white w-3" : "bg-white/40 w-1.5"
                   )}
                 />
               ))}
