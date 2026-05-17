@@ -56,15 +56,14 @@ export function About() {
           className="flex flex-col gap-6"
         >
           {/* Profile photo */}
-          <div className="relative w-48 h-48 rounded-2xl overflow-hidden border border-[var(--border)] mx-auto md:mx-0">
+          <div className="relative w-52 h-64 rounded-2xl overflow-hidden border border-[var(--border)] mx-auto md:mx-0">
             <Image
               src="/profile.jpg"
               alt="Abdullah Saud"
               fill
-              className="object-cover"
-              sizes="192px"
+              className="object-cover object-center"
+              sizes="208px"
             />
-            {/* Subtle glow overlay */}
             <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/5" />
           </div>
 

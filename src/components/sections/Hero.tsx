@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, ArrowDown } from "lucide-react";
-import { GitHubIcon, LinkedInIcon } from "@/components/ui/Icons";
+import { Mail, ArrowDown, Download } from "lucide-react";
+import { GitHubIcon, LinkedInIcon, TelegramIcon, WhatsAppIcon } from "@/components/ui/Icons";
 
 const ROLES = ["Senior Frontend Engineer", "React & Next.js Specialist", "UI Performance Expert"];
 
@@ -113,10 +113,12 @@ export function Hero() {
             View Work
           </a>
           <a
-            href="mailto:abdullahsaud2010@hotmail.com"
-            className="px-6 py-3 rounded-lg border border-[var(--border)] text-[var(--text-muted)] text-sm font-medium hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+            href="/cv.pdf"
+            download
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[var(--border)] text-[var(--text-muted)] text-sm font-medium hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
           >
-            Get in Touch
+            <Download size={15} />
+            Download CV
           </a>
         </motion.div>
 
@@ -125,6 +127,8 @@ export function Hero() {
           {[
             { href: "https://github.com/abdullah727", icon: GitHubIcon, label: "GitHub" },
             { href: "https://www.linkedin.com/in/abdullah-saud-9b8174141/", icon: LinkedInIcon, label: "LinkedIn" },
+            { href: "https://t.me/abdullahsaud", icon: TelegramIcon, label: "Telegram" },
+            { href: "https://wa.me/923314124948", icon: WhatsAppIcon, label: "WhatsApp" },
             { href: "mailto:abdullahsaud2010@hotmail.com", icon: Mail, label: "Email" },
           ].map(({ href, icon: Icon, label }) => (
             <a

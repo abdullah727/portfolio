@@ -49,14 +49,14 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             <button
               onClick={prev}
               aria-label="Previous screenshot"
-              className="absolute left-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-black/60 text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/80 z-10"
+              className="absolute left-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-black/60 text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/80 z-10 cursor-pointer"
             >
               <ChevronLeft size={16} />
             </button>
             <button
               onClick={next}
               aria-label="Next screenshot"
-              className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-black/60 text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/80 z-10"
+              className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-black/60 text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/80 z-10 cursor-pointer"
             >
               <ChevronRight size={16} />
             </button>

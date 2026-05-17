@@ -2,12 +2,14 @@
 
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
-import { GitHubIcon, LinkedInIcon } from "@/components/ui/Icons";
+import { GitHubIcon, LinkedInIcon, TelegramIcon, WhatsAppIcon } from "@/components/ui/Icons";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const socials = [
   { href: "https://github.com/abdullah727", icon: GitHubIcon, label: "GitHub" },
   { href: "https://www.linkedin.com/in/abdullah-saud-9b8174141/", icon: LinkedInIcon, label: "LinkedIn" },
+  { href: "https://t.me/abdullahsaud", icon: TelegramIcon, label: "Telegram" },
+  { href: "https://wa.me/923314124948", icon: WhatsAppIcon, label: "WhatsApp" },
   { href: "mailto:abdullahsaud2010@hotmail.com", icon: Mail, label: "Email" },
 ];
 
