@@ -49,12 +49,11 @@ export function Hero() {
       id="hero"
       className="relative min-h-screen flex flex-col items-center justify-center px-5 md:px-10 dot-grid overflow-hidden"
     >
-      {/* Radial glow */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 flex items-center justify-center"
-      >
-        <div className="w-[600px] h-[600px] rounded-full bg-[var(--accent)] opacity-[0.04] blur-[120px]" />
+      {/* Colorful background blobs */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-purple-600 opacity-[0.06] blur-[120px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-indigo-500 opacity-[0.06] blur-[100px]" />
+        <div className="absolute top-1/2 left-1/2 w-[300px] h-[300px] rounded-full bg-cyan-400 opacity-[0.04] blur-[80px]" />
       </div>
 
       <motion.div
@@ -71,10 +70,10 @@ export function Hero() {
           </span>
         </motion.div>
 
-        {/* Name */}
+        {/* Name with gradient */}
         <motion.h1
           variants={item}
-          className="text-5xl sm:text-6xl md:text-7xl font-semibold tracking-tight text-[var(--text)] mb-5"
+          className="gradient-text text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight mb-5"
         >
           Abdullah Saud
         </motion.h1>
@@ -84,9 +83,9 @@ export function Hero() {
           variants={item}
           className="h-8 flex items-center justify-center mb-6"
         >
-          <span className="font-mono text-lg md:text-xl text-[var(--accent)]">
+          <span className="font-mono text-lg md:text-xl text-[var(--text-muted)]">
             {displayed}
-            <span className="animate-pulse">|</span>
+            <span className="animate-pulse text-[var(--accent)]">|</span>
           </span>
         </motion.div>
 
@@ -108,7 +107,8 @@ export function Hero() {
               e.preventDefault();
               document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="px-6 py-3 rounded-lg bg-[var(--accent)] text-white text-sm font-medium hover:bg-blue-400 transition-colors"
+            className="px-6 py-3 rounded-lg text-white text-sm font-medium transition-opacity hover:opacity-90"
+            style={{ background: "var(--gradient)" }}
           >
             View Work
           </a>

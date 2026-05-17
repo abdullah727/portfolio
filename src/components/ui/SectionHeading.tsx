@@ -18,13 +18,16 @@ export function SectionHeading({ label, title, className }: SectionHeadingProps)
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={cn("mb-12", className)}
     >
-      <span className="font-mono text-xs text-[var(--accent)] tracking-widest uppercase mb-3 block">
+      <span className="font-mono text-xs tracking-widest uppercase mb-3 block gradient-text">
         {label}
       </span>
       <h2 className="text-3xl md:text-4xl font-semibold text-[var(--text)] tracking-tight">
         {title}
       </h2>
-      <div className="mt-4 h-px w-12 bg-[var(--accent)]" />
+      <div
+        className="mt-4 h-0.5 w-12 rounded-full"
+        style={{ background: "var(--gradient)" }}
+      />
     </motion.div>
   );
 }

@@ -27,10 +27,10 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.45, delay: index * 0.08, ease: "easeOut" }}
       className={cn(
-        "group flex flex-col rounded-xl overflow-hidden",
+        "gradient-border group flex flex-col rounded-xl overflow-hidden",
         "bg-[var(--surface)] border border-[var(--border)]",
-        "hover:border-[var(--accent)] transition-all duration-300",
-        "hover:shadow-[0_0_24px_var(--accent-dim)]"
+        "transition-all duration-300",
+        "hover:shadow-[0_0_32px_rgba(168,85,247,0.15)]"
       )}
     >
       {/* Image carousel */}
