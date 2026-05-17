@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-turbopack --yes)",
+      "Read(//Users/abdullahsaud/Desktop/Abdullah/**)",
+      "Bash(npx create-next-app@latest portfolio-site --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-turbopack --yes)",
+      "Bash(mv /Users/abdullahsaud/Desktop/Abdullah/portfolio-site/* /Users/abdullahsaud/Desktop/Abdullah/Portfolio/)",
+      "Bash(mv /Users/abdullahsaud/Desktop/Abdullah/portfolio-site/.* /Users/abdullahsaud/Desktop/Abdullah/Portfolio/)",
+      "Bash(rm -rf /Users/abdullahsaud/Desktop/Abdullah/portfolio-site)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(node -e \"const l = require\\('lucide-react'\\); const keys = Object.keys\\(l\\).filter\\(k => k.toLowerCase\\(\\).includes\\('git'\\) || k.toLowerCase\\(\\).includes\\('linked'\\)\\); console.log\\(keys\\)\")"
+    ]
+  }
+}
