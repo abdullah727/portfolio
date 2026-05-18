@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, ArrowDown, Download } from "lucide-react";
 import { GitHubIcon, LinkedInIcon, TelegramIcon, WhatsAppIcon } from "@/components/ui/Icons";
+import { yearsOfExperienceLabel } from "@/lib/constants";
 
 const ROLES = ["Senior Frontend Engineer", "React & Next.js Specialist", "UI Performance Expert"];
 
@@ -94,7 +95,7 @@ export function Hero() {
           variants={item}
           className="text-base md:text-lg text-[var(--text-muted)] leading-relaxed max-w-2xl mx-auto mb-10"
         >
-          8+ years building fast, scalable web products — from startup MVPs to
+          {yearsOfExperienceLabel} years building fast, scalable web products — from startup MVPs to
           enterprise platforms used by millions. I bridge the gap between great
           design and production-grade engineering.
         </motion.p>

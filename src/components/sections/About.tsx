@@ -3,9 +3,10 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { yearsOfExperienceLabel } from "@/lib/constants";
 
 const stats = [
-  { value: "8+", label: "Years Experience" },
+  { value: yearsOfExperienceLabel, label: "Years Experience" },
   { value: "5", label: "Companies" },
   { value: "6+", label: "Products Shipped" },
   { value: "90+", label: "Lighthouse Score" },
@@ -26,7 +27,7 @@ export function About() {
           className="space-y-5 text-[var(--text-muted)] text-base leading-relaxed"
         >
           <p>
-            Senior Frontend Engineer with 8+ years shipping high-performance, scalable web apps across
+            Senior Frontend Engineer with {yearsOfExperienceLabel} years shipping high-performance, scalable web apps across
             startups and enterprise teams in Finland, Singapore, USA, Saudi Arabia, and Pakistan.
           </p>
           <p>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { yearsOfExperienceLabel } from "@/lib/constants";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Abdullah Saud — Senior Frontend Engineer",
   description:
-    "Senior Frontend Engineer with 8+ years building fast, scalable React and Next.js applications. Based in Lahore, available remote worldwide.",
+    `Senior Frontend Engineer with ${yearsOfExperienceLabel} years building fast, scalable React and Next.js applications. Based in Lahore, available remote worldwide.`,
   keywords: [
     "Frontend Engineer",
     "React Developer",
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Abdullah Saud — Senior Frontend Engineer",
     description:
-      "8+ years building high-performance web products. React, Next.js, TypeScript specialist.",
+      `${yearsOfExperienceLabel} years building high-performance web products. React, Next.js, TypeScript specialist.`,
     type: "website",
     locale: "en_US",
   },
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Abdullah Saud — Senior Frontend Engineer",
     description:
-      "8+ years building high-performance web products. React, Next.js, TypeScript specialist.",
+      `${yearsOfExperienceLabel} years building high-performance web products. React, Next.js, TypeScript specialist.`,
   },
 };
 

@@ -46,7 +46,7 @@ export const projects: Project[] = [
     name: "Benzinga Pro",
     description:
       "Financial data platform delivering real-time stock quotes, earnings, analyst ratings, and market intelligence to retail and institutional investors. Built complex data visualization and live WebSocket feeds.",
-    stack: ["React", "Next.js", "TypeScript", "React Query", "WebSockets", "Recharts"],
+    stack: ["React", "Next.js", "TypeScript", "WebSockets", "Recharts"],
     liveUrl: "https://www.benzinga.com/quote/AAPL",
     images: [
       "/projects/benzinga/1.jpg",
