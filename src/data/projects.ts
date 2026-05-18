@@ -19,7 +19,7 @@ export const projects: Project[] = [
     name: "Etqan — PDMS",
     description:
       "Enterprise Purchase & Document Management System for Panda Retail. Handles invoice processing, supplier management, back-margin allocation workflows, and multi-level financial approval pipelines.",
-    stack: ["React 18", "Redux Toolkit", "RTK Query", "TypeScript", "Bootstrap 5", "ExcelJS"],
+    stack: ["React", "Redux Toolkit", "RTK Query", "TypeScript", "Bootstrap 5"],
     images: [
       "/projects/etqan/1.jpg",
       "/projects/etqan/2.jpg",

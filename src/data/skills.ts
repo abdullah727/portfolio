@@ -7,7 +7,7 @@ export const skills: SkillGroup[] = [
   },
   {
     category: "Frameworks & Libraries",
-    skills: ["React.js", "Next.js", "Redux", "Context API", "SWR", "React Query", "Framer Motion", "Tailwind CSS"],
+    skills: ["React.js", "Next.js", "Redux", "Context API", "SWR", "React Query", "Tailwind CSS"],
   },
   {
     category: "Data & APIs",
@@ -15,7 +15,7 @@ export const skills: SkillGroup[] = [
   },
   {
     category: "Tooling & DevOps",
-    skills: ["Git", "CI/CD", "Vercel", "Firebase", "Webpack", "Vite", "ESLint", "Cursor AI"],
+    skills: ["Git", "CI/CD", "Vercel", "Firebase", "Webpack", "Vite", "ESLint", "Cursor AI", "Claude Code"],
   },
   {
     category: "Testing & Performance",
