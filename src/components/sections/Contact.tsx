@@ -15,7 +15,7 @@ const socials = [
 
 export function Contact() {
   return (
-    <section id="contact" className="py-24 px-5 md:px-10">
+    <section id="contact" className="py-28 px-5 md:px-10 bg-[var(--surface-2)]/40">
       <div className="max-w-6xl mx-auto">
         <SectionHeading label="Contact" title="Let's build something." />
 
@@ -24,9 +24,9 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="max-w-xl text-center md:text-left mx-auto md:mx-0"
+          className="max-w-2xl text-center md:text-left mx-auto md:mx-0"
         >
-          <p className="text-[var(--text-muted)] text-base leading-relaxed mb-8">
+          <p className="text-[var(--text-muted)] text-base md:text-lg leading-relaxed mb-10">
             I&apos;m currently open to senior frontend or lead engineering roles — remote or
             hybrid anywhere. If you&apos;re building something interesting and want someone
             who cares deeply about quality, I&apos;d love to hear from you.
@@ -34,7 +34,7 @@ export function Contact() {
 
           <a
             href="mailto:abdullahsaud2010@hotmail.com"
-            className="inline-flex items-center gap-2 text-base md:text-lg font-medium text-[var(--text)] hover:text-[var(--accent)] transition-colors group mb-10 break-all"
+            className="inline-flex items-center gap-2 text-xl md:text-2xl font-semibold text-[var(--text)] hover:text-[var(--accent-secondary)] transition-colors group mb-12 break-all"
           >
             abdullahsaud2010@hotmail.com
             <span className="opacity-0 group-hover:opacity-100 transition-opacity hidden md:inline">→</span>
@@ -48,7 +48,7 @@ export function Contact() {
                 target={href.startsWith("http") ? "_blank" : undefined}
                 rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
                 aria-label={label}
-                className="flex items-center gap-2 px-4 py-2.5 rounded-lg border border-[var(--border)] text-[var(--text-muted)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors text-sm"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-lg border border-[var(--border)] bg-[var(--surface)] text-[var(--text-muted)] hover:border-[var(--accent)] hover:text-[var(--text)] transition-colors text-sm"
               >
                 <Icon size={16} />
                 {label}

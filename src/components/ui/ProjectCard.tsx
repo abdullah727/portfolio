@@ -47,7 +47,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         "group flex flex-col rounded-xl overflow-hidden",
         "bg-[var(--surface)] border border-[var(--border)]",
         "transition-all duration-300",
-        "hover:border-[var(--border-hover)] hover:shadow-[0_4px_24px_rgba(0,0,0,0.08)]"
+        "hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)]"
       )}
     >
       {/* Image carousel */}
