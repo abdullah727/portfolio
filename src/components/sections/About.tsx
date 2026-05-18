@@ -38,8 +38,13 @@ export function About() {
             and translating designs into pixel-perfect, accessible interfaces.
           </p>
           <p>
-            I take ownership end to end — from planning and implementation to deployment and post-deployment analysis. Not
-            just closing tickets, but seeing features through.
+            I take ownership end to end, from planning and implementation to
+            deployment and post-deployment analysis. Not just closing tickets,
+            but seeing features through and making sure they deliver real value
+            after release. To work efficiently without compromising quality, I
+            actively use AI tools like Cursor and Claude to reduce busywork and
+            stay focused on the decisions that matter — building reliable
+            solutions, moving faster, and shipping with confidence.
           </p>
           <p className="text-sm font-mono text-[var(--text-dim)] pt-2">
             Based in Lahore, Pakistan · Available remote worldwide.
