@@ -1,43 +1,20 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, ArrowDown, Download } from "lucide-react";
 import { GitHubIcon, LinkedInIcon, TelegramIcon, WhatsAppIcon } from "@/components/ui/Icons";
 import { yearsOfExperienceLabel } from "@/lib/constants";
 
-const ROLES = ["Senior Frontend Engineer", "React & Next.js Specialist", "UI Performance Expert"];
+const PILLARS = [
+  "Frontend Engineering",
+  "React & Next.js",
+  "UI Performance",
+];
 
 export function Hero() {
-  const [roleIndex, setRoleIndex] = useState(0);
-  const [displayed, setDisplayed] = useState("");
-  const [typing, setTyping] = useState(true);
-
-  useEffect(() => {
-    const target = ROLES[roleIndex];
-    let timeout: ReturnType<typeof setTimeout>;
-
-    if (typing) {
-      if (displayed.length < target.length) {
-        timeout = setTimeout(() => setDisplayed(target.slice(0, displayed.length + 1)), 55);
-      } else {
-        timeout = setTimeout(() => setTyping(false), 2200);
-      }
-    } else {
-      if (displayed.length > 0) {
-        timeout = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 30);
-      } else {
-        setRoleIndex((i) => (i + 1) % ROLES.length);
-        setTyping(true);
-      }
-    }
-
-    return () => clearTimeout(timeout);
-  }, [displayed, typing, roleIndex]);
-
   const container = {
     hidden: {},
-    show: { transition: { staggerChildren: 0.12 } },
+    show: { transition: { staggerChildren: 0.1 } },
   } as const;
 
   const item = {
@@ -48,46 +25,49 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center px-5 md:px-10 dot-grid overflow-hidden"
+      className="relative min-h-screen flex flex-col items-center justify-center px-5 md:px-10 overflow-hidden"
     >
-      {/* Colorful background blobs */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-purple-600 opacity-[0.06] blur-[120px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-indigo-500 opacity-[0.06] blur-[100px]" />
-        <div className="absolute top-1/2 left-1/2 w-[300px] h-[300px] rounded-full bg-cyan-400 opacity-[0.04] blur-[80px]" />
-      </div>
-
       <motion.div
         variants={container}
         initial="hidden"
         animate="show"
-        className="relative z-10 max-w-3xl w-full text-center"
+        className="relative z-10 max-w-6xl w-full text-center pt-24 pb-16"
       >
-        {/* Availability */}
-        <motion.div variants={item} className="flex justify-center mb-8">
-          <span className="flex items-center gap-2 text-xs font-mono text-[var(--text-muted)] border border-[var(--border)] rounded-full px-4 py-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+        {/* Availability pill */}
+        <motion.div variants={item} className="flex justify-center mb-10">
+          <span className="flex items-center gap-2 text-xs font-mono text-[var(--text-muted)] border border-[var(--border)] rounded-full px-4 py-2 bg-[var(--surface)]">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
             Available for new opportunities
           </span>
         </motion.div>
 
-        {/* Name with gradient */}
+        {/* Big brand name — hanenko-style centerpiece */}
         <motion.h1
           variants={item}
-          className="gradient-text text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight mb-5"
+          className="text-[var(--text)] font-bold tracking-tight leading-[0.95] mb-8"
+          style={{
+            fontSize: "clamp(3rem, 12vw, 9rem)",
+            letterSpacing: "-0.04em",
+          }}
         >
-          Abdullah Saud
+          Abdullah<span className="text-[var(--accent-secondary)]">.</span>
+          <br className="sm:hidden" />
+          <span className="sm:ml-4">Saud</span>
         </motion.h1>
 
-        {/* Typewriter role */}
+        {/* Three service pillars */}
         <motion.div
           variants={item}
-          className="h-8 flex items-center justify-center mb-6"
+          className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 mb-10 text-sm md:text-base font-mono uppercase tracking-widest text-[var(--text-muted)]"
         >
-          <span className="font-mono text-lg md:text-xl text-[var(--text-muted)]">
-            {displayed}
-            <span className="animate-pulse text-[var(--accent)]">|</span>
-          </span>
+          {PILLARS.map((p, i) => (
+            <span key={p} className="flex items-center gap-6">
+              {i > 0 && (
+                <span className="text-[var(--text-dim)] hidden sm:inline">·</span>
+              )}
+              {p}
+            </span>
+          ))}
         </motion.div>
 
         {/* Tagline */}
@@ -108,15 +88,14 @@ export function Hero() {
               e.preventDefault();
               document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="px-6 py-3 rounded-lg text-white text-sm font-medium transition-opacity hover:opacity-90"
-            style={{ background: "var(--gradient)" }}
+            className="px-6 py-3 rounded-lg bg-[var(--accent)] text-[var(--bg)] text-sm font-medium transition-opacity hover:opacity-85"
           >
             View Work
           </a>
           <a
             href="/cv.pdf"
             download
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[var(--border)] text-[var(--text-muted)] text-sm font-medium hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[var(--border)] bg-[var(--surface)] text-[var(--text)] text-sm font-medium hover:border-[var(--accent)] transition-colors"
           >
             <Download size={15} />
             Download CV
@@ -138,7 +117,7 @@ export function Hero() {
               target={href.startsWith("http") ? "_blank" : undefined}
               rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
               aria-label={label}
-              className="p-2.5 rounded-lg border border-[var(--border)] text-[var(--text-muted)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+              className="p-2.5 rounded-lg border border-[var(--border)] bg-[var(--surface)] text-[var(--text-muted)] hover:border-[var(--accent)] hover:text-[var(--text)] transition-colors"
             >
               <Icon size={18} />
             </a>
@@ -150,7 +129,7 @@ export function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.6, duration: 0.6 }}
+        transition={{ delay: 1.4, duration: 0.6 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[var(--text-dim)]"
       >
         <span className="text-[10px] font-mono tracking-widest uppercase">Scroll</span>
