@@ -69,10 +69,10 @@ export const projects: Project[] = [
   },
   {
     id: "digipops",
-    name: "DigiPops",
+    name: "DigiPops.TV",
     description:
-      "Digital marketing and web solutions platform offering landing page creation, campaign management, and performance analytics. Built a fast, conversion-optimized web presence from the ground up.",
-    stack: ["React", "TypeScript", "Firebase", "Tailwind CSS"],
+      "Responsive landing page for a short films festival and awards platform powered by a patented people's-choice algorithm. Built reusable UI components documented with Storybook, deployed across dev/staging/production via Firebase Hosting and a GitLab CI/CD pipeline.",
+    stack: ["React", "Redux", "Bulma CSS", "Storybook", "Firebase"],
     liveUrl: "https://dp-landing-page.web.app/",
     images: [
       "/projects/digipops/1.jpg",
