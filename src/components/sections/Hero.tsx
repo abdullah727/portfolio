@@ -150,11 +150,16 @@ export function Hero() {
       </motion.div>
 
       {/* Scroll indicator */}
-      <motion.div
+      <motion.button
+        type="button"
+        onClick={() =>
+          document.querySelector("#about")?.scrollIntoView({ behavior: "smooth" })
+        }
+        aria-label="Scroll to next section"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4, duration: 0.6 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[var(--text-dim)]"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[var(--text-dim)] hover:text-[var(--text)] transition-colors cursor-pointer"
       >
         <span className="text-[10px] font-mono tracking-widest uppercase">Scroll</span>
         <motion.div
@@ -163,7 +168,7 @@ export function Hero() {
         >
           <ArrowDown size={14} />
         </motion.div>
-      </motion.div>
+      </motion.button>
     </section>
   );
 }
