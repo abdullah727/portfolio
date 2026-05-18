@@ -26,25 +26,20 @@ export function About() {
           className="space-y-5 text-[var(--text-muted)] text-base leading-relaxed"
         >
           <p>
-            I&apos;m a Senior Frontend Engineer with 8+ years of experience building
-            high-performance, scalable web applications. I&apos;ve worked across startups
-            and enterprise teams in Finland, Singapore, USA, Saudia Arabia and Pakistan — shipping products
-            that real users depend on every day.
+            Senior Frontend Engineer with 8+ years shipping high-performance, scalable web apps across
+            startups and enterprise teams in Finland, Singapore, USA, Saudi Arabia, and Pakistan.
           </p>
           <p>
-            I specialize in React and Next.js, with deep experience in UI performance
-            optimization, complex state management, and translating intricate designs
-            into pixel-perfect, accessible interfaces.
+            I specialize in React and Next.js, deep experience in performance optimization, complex state management, and
+            translating designs into pixel-perfect, accessible interfaces.
           </p>
           <p>
-            Beyond code, I care about team culture. I mentor junior engineers, establish
-            architecture standards, and collaborate closely with Product and Design to make
-            sure we&apos;re always building the right thing, the right way.
+            I take ownership end to end — from planning and implementation to deployment
+            and post-deployment analysis. Not just closing tickets, but seeing features through.
           </p>
           <p>
-            I also move fast with the help of AI tools like Cursor and Claude
-            to eliminate busywork, so the focus stays on decisions that actually matter.
-            The result: quality code shipped with speed and confidence, not corners cut.
+            I also move fast on purpose. Using AI tools like Cursor and Claude, I cut busywork
+            and stay focused on decisions that matter — quality code, shipped with confidence.
           </p>
           <p>
             Based in Lahore, Pakistan · Available for remote roles across all timezones.
