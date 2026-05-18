@@ -44,7 +44,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.45, delay: index * 0.08, ease: "easeOut" }}
       className={cn(
-        "gradient-border group flex flex-col rounded-xl overflow-hidden",
+        "group flex flex-col rounded-xl overflow-hidden",
         "bg-[var(--surface)] border border-[var(--border)]",
         "transition-all duration-300",
         "hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)]"
