@@ -15,7 +15,7 @@
   --accent-tertiary: #6b6358;
   --accent-dim: rgba(184, 92, 56, 0.10);
   --accent-glow: rgba(28, 26, 23, 0.15);
-  --gradient: linear-gradient(135deg, #1c1a17, #4a4036, #b85c38);
+  --gradient: linear-gradient(135deg, #f97316, #a855f7);
 }
 
 @theme inline {
@@ -57,7 +57,7 @@ body {
   background-clip: text;
 }
 
-/* Gradient border card */
+/* Gradient border card — orange → purple, fades in on hover */
 .gradient-border {
   position: relative;
 }
@@ -66,17 +66,18 @@ body {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  padding: 1px;
+  padding: 1.5px;
   background: var(--gradient);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.35s ease;
   pointer-events: none;
 }
-.gradient-border:hover::before {
+.gradient-border:hover::before,
+.gradient-border:focus-within::before {
   opacity: 1;
 }
 

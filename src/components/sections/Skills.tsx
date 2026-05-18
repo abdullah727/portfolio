@@ -7,11 +7,11 @@ import { skills } from "@/data/skills";
 
 export function Skills() {
   return (
-    <section id="skills" className="py-24 px-5 md:px-10">
+    <section id="skills" className="py-28 px-5 md:px-10 bg-[var(--surface-2)]/40">
       <div className="max-w-6xl mx-auto">
-        <SectionHeading label="Skills" title="What I work with" />
+        <SectionHeading label="Skills" title="What I work with." />
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {skills.map((group, i) => (
             <motion.div
               key={group.category}
@@ -19,9 +19,9 @@ export function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.4, delay: i * 0.08, ease: "easeOut" }}
-              className="bg-[var(--surface)] border border-[var(--border)] rounded-xl p-5 hover:border-[var(--border-hover)] transition-colors"
+              className="gradient-border bg-[var(--surface)] border border-[var(--border)] rounded-2xl p-6 transition-colors"
             >
-              <h3 className="text-xs font-mono text-[var(--accent)] tracking-widest uppercase mb-4">
+              <h3 className="text-xs font-mono text-[var(--accent-secondary)] tracking-[0.25em] uppercase mb-5">
                 {group.category}
               </h3>
               <div className="flex flex-wrap gap-2">

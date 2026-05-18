@@ -12,7 +12,7 @@
       "Bash(node -e \"const l = require\\('lucide-react'\\); const keys = Object.keys\\(l\\).filter\\(k => k.toLowerCase\\(\\).includes\\('git'\\) || k.toLowerCase\\(\\).includes\\('linked'\\)\\); console.log\\(keys\\)\")",
       "Bash(find /Users/abdullahsaud/Desktop /Users/abdullahsaud/Downloads -name \"Resume.pdf\" 2>/dev/null)",
       "Read(//Users/abdullahsaud/Desktop/**)",
-      "Bash(cp \"/Users/abdullahsaud/Downloads/Personal stuff/Resume.pdf\" \"/Users/abdullahsaud/Desktop/Abdullah/Portfolio/public/cv.pdf\" && echo \"Copied successfully\")"
+      "Bash(cp \"/Users/abdullahsaud/Downloads/Personal stuff/Resume.pdf\" \"/Users/abdullahsaud/Desktop/Abdullah/Portfolio/public/cv.pdf\" && echo \"Copied successfully\")",
     ],
     "additionalDirectories": [
       "/Users/abdullahsaud/Downloads/Personal stuff"

@@ -33,20 +33,13 @@ export function Hero() {
         animate="show"
         className="relative z-10 max-w-6xl w-full text-center pt-24 pb-16"
       >
-        {/* Availability pill */}
-        <motion.div variants={item} className="flex justify-center mb-10">
-          <span className="flex items-center gap-2 text-xs font-mono text-[var(--text-muted)] border border-[var(--border)] rounded-full px-4 py-2 bg-[var(--surface)]">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            Available for new opportunities
-          </span>
-        </motion.div>
 
         {/* Big brand name — hanenko-style centerpiece */}
         <motion.h1
           variants={item}
           className="text-[var(--text)] font-bold tracking-tight leading-[0.95] mb-8"
           style={{
-            fontSize: "clamp(3rem, 12vw, 9rem)",
+            fontSize: "clamp(3rem, 12vw, 6rem)",
             letterSpacing: "-0.04em",
           }}
         >
@@ -95,7 +88,7 @@ export function Hero() {
           <a
             href="/cv.pdf"
             download
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[var(--border)] bg-[var(--surface)] text-[var(--text)] text-sm font-medium hover:border-[var(--accent)] transition-colors"
+            className="gradient-border inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[var(--border)] bg-[var(--surface)] text-[var(--text)] text-sm font-medium transition-colors"
           >
             <Download size={15} />
             Download CV

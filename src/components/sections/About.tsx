@@ -14,36 +14,35 @@ const stats = [
 
 export function About() {
   return (
-    <section id="about" className="py-24 px-5 md:px-10 max-w-6xl mx-auto">
-      <SectionHeading label="About" title="Who I am" />
+    <section id="about" className="py-28 px-5 md:px-10 max-w-6xl mx-auto">
+      <SectionHeading label="About" title="Who I am." />
 
-      <div className="grid md:grid-cols-2 gap-12 items-start">
+      <div className="grid md:grid-cols-[1.4fr_1fr] gap-14 items-start">
         {/* Bio */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="space-y-5 text-[var(--text-muted)] text-base leading-relaxed text-center md:text-left"
+          className="space-y-5 text-[var(--text-muted)] text-base md:text-lg leading-relaxed text-center md:text-left"
         >
-          <p>
-            Senior Frontend Engineer with {yearsOfExperienceLabel} years shipping high-performance, scalable web apps across
-            startups and enterprise teams in Finland, Singapore, USA, Saudi Arabia, and Pakistan.
+          <p className="text-[var(--text)] text-lg md:text-xl font-medium leading-snug">
+            Senior Frontend Engineer who enjoys turning complex problems into simple, elegant interfaces.
           </p>
           <p>
-            I specialize in React and Next.js, deep experience in performance optimization, complex state management, and
-            translating designs into pixel-perfect, accessible interfaces.
+            {yearsOfExperienceLabel} years shipping high-performance, scalable web apps across startups and enterprise teams
+            in Finland, Singapore, USA, Saudi Arabia, and Pakistan.
           </p>
           <p>
-            I take ownership end to end — from planning and implementation to deployment
-            and post-deployment analysis. Not just closing tickets, but seeing features through.
+            I specialize in React and Next.js, with deep experience in performance optimization, complex state management,
+            and translating designs into pixel-perfect, accessible interfaces.
           </p>
           <p>
-            I also move fast on purpose. Using AI tools like Cursor and Claude, I cut busywork
-            and stay focused on decisions that matter — quality code, shipped with confidence.
+            I take ownership end to end — from planning and implementation to deployment and post-deployment analysis. Not
+            just closing tickets, but seeing features through.
           </p>
-          <p>
-            Based in Lahore, Pakistan · Available for remote roles across all timezones.
+          <p className="text-sm font-mono text-[var(--text-dim)] pt-2">
+            Based in Lahore, Pakistan · Available remote worldwide.
           </p>
         </motion.div>
 
@@ -55,20 +54,17 @@ export function About() {
           transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
           className="flex flex-col gap-6 items-center md:items-start"
         >
-          {/* Profile photo */}
-          <div className="relative w-52 h-64 rounded-2xl overflow-hidden border border-[var(--border)] mx-auto md:mx-0">
+          <div className="relative w-full max-w-[280px] aspect-[4/5] rounded-2xl overflow-hidden border border-[var(--border)]">
             <Image
               src="/profile.jpg"
               alt="Abdullah Saud"
               fill
               className="object-cover object-center"
-              sizes="208px"
+              sizes="280px"
             />
-            <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/5" />
           </div>
 
-          {/* Stats grid */}
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-3 w-full max-w-[280px]">
             {stats.map((stat, i) => (
               <motion.div
                 key={stat.label}
@@ -76,9 +72,9 @@ export function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.15 + i * 0.07 }}
-                className="bg-[var(--surface)] border border-[var(--border)] rounded-xl p-4"
+                className="gradient-border bg-[var(--surface)] border border-[var(--border)] rounded-xl p-4"
               >
-                <div className="text-2xl font-semibold text-[var(--accent)]">{stat.value}</div>
+                <div className="text-2xl font-bold text-[var(--text)]">{stat.value}</div>
                 <div className="text-xs text-[var(--text-muted)] mt-0.5">{stat.label}</div>
               </motion.div>
             ))}
