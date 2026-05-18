@@ -8,7 +8,7 @@ const stats = [
   { value: "8+", label: "Years Experience" },
   { value: "5", label: "Companies" },
   { value: "6+", label: "Products Shipped" },
-  { value: "40%", label: "Perf. Improvement" },
+  { value: "90+", label: "Lighthouse Score" },
 ];
 
 export function About() {
@@ -28,19 +28,23 @@ export function About() {
           <p>
             I&apos;m a Senior Frontend Engineer with 8+ years of experience building
             high-performance, scalable web applications. I&apos;ve worked across startups
-            and enterprise teams in Finland, Singapore, and Pakistan — shipping products
+            and enterprise teams in Finland, Singapore, USA, Saudia Arabia and Pakistan — shipping products
             that real users depend on every day.
           </p>
           <p>
-            My focus is on the intersection of engineering quality and product impact.
             I specialize in React and Next.js, with deep experience in UI performance
             optimization, complex state management, and translating intricate designs
             into pixel-perfect, accessible interfaces.
           </p>
           <p>
-            Beyond code, I care about team culture — I mentor junior engineers, establish
+            Beyond code, I care about team culture. I mentor junior engineers, establish
             architecture standards, and collaborate closely with Product and Design to make
             sure we&apos;re always building the right thing, the right way.
+          </p>
+          <p>
+            I also move fast with the help of AI tools like Cursor and Claude
+            to eliminate busywork, so the focus stays on decisions that actually matter.
+            The result: quality code shipped with speed and confidence, not corners cut.
           </p>
           <p>
             Based in Lahore, Pakistan · Available for remote roles across all timezones.
