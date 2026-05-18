@@ -24,7 +24,7 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="max-w-xl"
+          className="max-w-xl text-center md:text-left mx-auto md:mx-0"
         >
           <p className="text-[var(--text-muted)] text-base leading-relaxed mb-8">
             I&apos;m currently open to senior frontend or lead engineering roles — remote or
@@ -34,13 +34,13 @@ export function Contact() {
 
           <a
             href="mailto:abdullahsaud2010@hotmail.com"
-            className="inline-flex items-center gap-2 text-lg font-medium text-[var(--text)] hover:text-[var(--accent)] transition-colors group mb-10"
+            className="inline-flex items-center gap-2 text-base md:text-lg font-medium text-[var(--text)] hover:text-[var(--accent)] transition-colors group mb-10 break-all"
           >
             abdullahsaud2010@hotmail.com
-            <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+            <span className="opacity-0 group-hover:opacity-100 transition-opacity hidden md:inline">→</span>
           </a>
 
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
             {socials.map(({ href, icon: Icon, label }) => (
               <a
                 key={label}

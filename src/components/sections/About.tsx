@@ -24,7 +24,7 @@ export function About() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="space-y-5 text-[var(--text-muted)] text-base leading-relaxed"
+          className="space-y-5 text-[var(--text-muted)] text-base leading-relaxed text-center md:text-left"
         >
           <p>
             Senior Frontend Engineer with {yearsOfExperienceLabel} years shipping high-performance, scalable web apps across
@@ -53,7 +53,7 @@ export function About() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
-          className="flex flex-col gap-6"
+          className="flex flex-col gap-6 items-center md:items-start"
         >
           {/* Profile photo */}
           <div className="relative w-52 h-64 rounded-2xl overflow-hidden border border-[var(--border)] mx-auto md:mx-0">

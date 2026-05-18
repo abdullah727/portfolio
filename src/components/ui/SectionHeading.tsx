@@ -16,7 +16,7 @@ export function SectionHeading({ label, title, className }: SectionHeadingProps)
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className={cn("mb-12", className)}
+      className={cn("mb-12 text-center md:text-left", className)}
     >
       <span className="font-mono text-xs tracking-widest uppercase mb-3 block gradient-text">
         {label}
@@ -25,7 +25,7 @@ export function SectionHeading({ label, title, className }: SectionHeadingProps)
         {title}
       </h2>
       <div
-        className="mt-4 h-0.5 w-12 rounded-full"
+        className="mt-4 h-0.5 w-12 rounded-full mx-auto md:mx-0"
         style={{ background: "var(--gradient)" }}
       />
     </motion.div>

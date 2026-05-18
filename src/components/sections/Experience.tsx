@@ -28,7 +28,7 @@ export function Experience() {
                 {/* Timeline dot */}
                 <div className="absolute left-0 md:left-8 top-1.5 w-2 h-2 rounded-full bg-[var(--accent)] -translate-x-1/2 hidden sm:block ring-4 ring-[var(--bg)] ring-offset-0" />
 
-                <div className="bg-[var(--surface)] border border-[var(--border)] rounded-xl p-6 hover:border-[var(--border-hover)] transition-colors">
+                <div className="bg-[var(--surface)] border border-[var(--border)] rounded-xl p-4 sm:p-6 hover:border-[var(--border-hover)] transition-colors">
                   {/* Header */}
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
                     <div>
