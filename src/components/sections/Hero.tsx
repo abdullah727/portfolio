@@ -1,17 +1,40 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, ArrowDown, Download } from "lucide-react";
 import { GitHubIcon, LinkedInIcon, TelegramIcon, WhatsAppIcon } from "@/components/ui/Icons";
 import { yearsOfExperienceLabel } from "@/lib/constants";
 
-const PILLARS = [
-  "Frontend Engineering",
-  "React & Next.js",
-  "UI Performance",
-];
+const ROLES = ["Senior Frontend Engineer", "React & Next.js Specialist", "UI Performance Expert"];
 
 export function Hero() {
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [displayed, setDisplayed] = useState("");
+  const [typing, setTyping] = useState(true);
+
+  useEffect(() => {
+    const target = ROLES[roleIndex];
+    let timeout: ReturnType<typeof setTimeout>;
+
+    if (typing) {
+      if (displayed.length < target.length) {
+        timeout = setTimeout(() => setDisplayed(target.slice(0, displayed.length + 1)), 55);
+      } else {
+        timeout = setTimeout(() => setTyping(false), 2200);
+      }
+    } else {
+      if (displayed.length > 0) {
+        timeout = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 30);
+      } else {
+        setRoleIndex((i) => (i + 1) % ROLES.length);
+        setTyping(true);
+      }
+    }
+
+    return () => clearTimeout(timeout);
+  }, [displayed, typing, roleIndex]);
+
   const container = {
     hidden: {},
     show: { transition: { staggerChildren: 0.1 } },
@@ -51,16 +74,12 @@ export function Hero() {
         {/* Three service pillars */}
         <motion.div
           variants={item}
-          className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 mb-10 text-sm md:text-base font-mono uppercase tracking-widest text-[var(--text-muted)]"
+          className="h-8 flex items-center justify-center mb-6"
         >
-          {PILLARS.map((p, i) => (
-            <span key={p} className="flex items-center gap-6">
-              {i > 0 && (
-                <span className="text-[var(--text-dim)] hidden sm:inline">·</span>
-              )}
-              {p}
-            </span>
-          ))}
+          <span className="font-mono text-lg md:text-xl text-[var(--text-muted)]">
+            {displayed}
+            <span className="animate-pulse text-[var(--accent)]">|</span>
+          </span>
         </motion.div>
 
         {/* Tagline */}
@@ -88,10 +107,22 @@ export function Hero() {
           <a
             href="/cv.pdf"
             download
-            className="gradient-border inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[var(--border)] bg-[var(--surface)] text-[var(--text)] text-sm font-medium transition-colors"
+            ria-label="Download CV"
+            className="group relative inline-block rounded-lg p-[1.5px]"
+            style={{ background: "linear-gradient(135deg, #f97316, #a855f7)" }}
           >
+            <span className="relative flex items-center gap-2 px-6 py-3 rounded-[7px] bg-[var(--surface)] text-[var(--text)] text-sm font-medium overflow-hidden">
+              <span
+                aria-hidden
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                style={{
+                  background:
+                    "linear-gradient(135deg, rgba(249,115,22,0.18) 0%, rgba(168,199,250,0.24) 50%, rgba(168,85,247,0.22) 100%)",
+                }}
+              />
             <Download size={15} />
-            Download CV
+           <span className="relative z-10">Download CV</span>
+            </span>
           </a>
         </motion.div>
 
